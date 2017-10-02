@@ -12,7 +12,7 @@ services:
       - "9200:9200"
       - "9300:9300"
     environment:
-      ES_JAVA_OPTS: "-Xmx2g -Xms2g"
+      ES_JAVA_OPTS: "-Xmx1g -Xms1g"
       cluster.name: "docker-cluster"
       bootstrap.memory_lock: "true"
       xpack.security.enabled: "false"
@@ -40,7 +40,7 @@ services:
       # - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       - esdata2:/usr/share/elasticsearch/data
     environment:
-      ES_JAVA_OPTS: "-Xmx2g -Xms2g"
+      ES_JAVA_OPTS: "-Xmx1g -Xms1g"
       cluster.name: "docker-cluster"
       bootstrap.memory_lock: "true"
       discovery.zen.ping.unicast.hosts: "elasticsearch"
@@ -83,7 +83,7 @@ services:
     ports:
       - "5001:5000"
     environment:
-      LS_JAVA_OPTS: "-Xms1g -Xmx1g"
+      LS_JAVA_OPTS: "-Xms512m -Xmx512m"
     networks:
       - elk
     depends_on:
