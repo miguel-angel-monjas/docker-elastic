@@ -87,6 +87,17 @@ services:
     depends_on:
       - elasticsearch
 
+  kafka:
+    image: spotify/kafka
+    environment:
+      - ADVERTISED_HOST=10.10.10.66
+      - ADVERTISED_PORT=9092
+      - AUTO_CREATE_TOPICS=true
+      - NUM_PARTITIONS=1
+    networks:
+      - elk
+    container_name: kafka
+
 volumes:
   esdata1:
     driver: local
