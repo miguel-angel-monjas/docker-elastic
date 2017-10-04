@@ -94,6 +94,8 @@ services:
       - ADVERTISED_PORT=9092
       - AUTO_CREATE_TOPICS=true
       - NUM_PARTITIONS=1
+    ports:
+      - "9092"
     networks:
       - elk
     container_name: kafka
