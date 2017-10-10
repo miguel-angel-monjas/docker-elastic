@@ -95,6 +95,7 @@ services:
       - AUTO_CREATE_TOPICS=true
       - NUM_PARTITIONS=1
     ports:
+      - "2181"
       - "9092"
     networks:
       - elk
