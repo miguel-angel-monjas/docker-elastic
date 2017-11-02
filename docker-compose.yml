@@ -76,6 +76,7 @@ services:
     container_name: logstash
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      #- ./logstash/config/log4j2.properties:/usr/share/logstash/config/log4j2.properties
       - ./logstash/pipeline:/usr/share/logstash/pipeline
       - ./logstash/input:/tmp
     ports:
@@ -87,6 +88,7 @@ services:
     depends_on:
       - elasticsearch
 
+<<<<<<< HEAD
   kafka:
     image: spotify/kafka
     environment:
@@ -100,6 +102,20 @@ services:
     networks:
       - elk
     container_name: kafka
+=======
+#  kafka:
+#    image: spotify/kafka
+#    environment:
+#      - ADVERTISED_HOST=10.10.10.66
+#      - ADVERTISED_PORT=9092
+#      - AUTO_CREATE_TOPICS=true
+#      - NUM_PARTITIONS=1
+#    ports:
+#      - "9092"
+#    networks:
+#      - elk
+#    container_name: kafka
+>>>>>>> dffe0daf294864379686d28322d1c76d16803d2d
 
 volumes:
   esdata1:
